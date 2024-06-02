@@ -1,0 +1,9 @@
+{
+	"name": "azure-excel-to-sql",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "885fc23f-decf-40aa-8de2-562dddd63ce7",
+		"tenantId": "00473c71-d0b3-40b2-b7c5-f511c261be3d"
+	}
+}

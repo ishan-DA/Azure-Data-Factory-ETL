@@ -1,0 +1,71 @@
+{
+	"name": "Excel",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Coffee Shop.xlsx",
+				"container": "raw-data"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "transaction_id",
+				"type": "String"
+			},
+			{
+				"name": "transaction_date",
+				"type": "String"
+			},
+			{
+				"name": "store_id",
+				"type": "String"
+			},
+			{
+				"name": "store_location",
+				"type": "String"
+			},
+			{
+				"name": "product_id",
+				"type": "String"
+			},
+			{
+				"name": "transaction_qty",
+				"type": "String"
+			},
+			{
+				"name": "unit_price",
+				"type": "String"
+			},
+			{
+				"name": "product_category",
+				"type": "String"
+			},
+			{
+				"name": "product_type",
+				"type": "String"
+			},
+			{
+				"name": "product_detail",
+				"type": "String"
+			},
+			{
+				"name": "size",
+				"type": "String"
+			},
+			{
+				"name": "total_bill",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

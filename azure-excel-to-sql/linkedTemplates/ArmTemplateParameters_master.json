@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "azure-excel-to-sql"
+		},
+		"AzureBlobStorage_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase_properties_typeProperties_server": {
+			"value": "azure---server.database.windows.net"
+		},
+		"AzureSqlDatabase_properties_typeProperties_database": {
+			"value": "my_azure"
+		},
+		"AzureSqlDatabase_properties_typeProperties_userName": {
+			"value": "azure"
+		},
+		"CSV-JSON_properties_typeProperties_scope": {
+			"value": "/subscriptions/9d1e88be-66d4-4405-8349-27f0de10191e/resourceGroups/azure_tutorial/providers/Microsoft.Storage/storageAccounts/azurevessel"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

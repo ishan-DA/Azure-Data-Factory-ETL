@@ -1,0 +1,25 @@
+{
+	"name": "CSV-JSON",
+	"properties": {
+		"description": "Upon uploading a .csv file trigger will run and copy the contents to .JSON file format.",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "CSV to JSON",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/raw-data/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/9d1e88be-66d4-4405-8349-27f0de10191e/resourceGroups/azure_tutorial/providers/Microsoft.Storage/storageAccounts/azurevessel",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"name": "azure-dataflow",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c3eb046a-822b-4773-b6ce-a98d0d24bed1",
+		"tenantId": "00473c71-d0b3-40b2-b7c5-f511c261be3d"
+	}
+}

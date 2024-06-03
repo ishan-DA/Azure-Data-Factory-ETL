@@ -7,7 +7,70 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": []
+		"schema": [
+			{
+				"name": "EEID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Job_Title",
+				"type": "varchar"
+			},
+			{
+				"name": "Department",
+				"type": "varchar"
+			},
+			{
+				"name": "Business_Unit",
+				"type": "varchar"
+			},
+			{
+				"name": "Gender",
+				"type": "varchar"
+			},
+			{
+				"name": "Ethnicity",
+				"type": "varchar"
+			},
+			{
+				"name": "Age",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Hire_Date",
+				"type": "date"
+			},
+			{
+				"name": "Annual_Salary",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Bonus",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Country",
+				"type": "varchar"
+			},
+			{
+				"name": "City",
+				"type": "varchar"
+			},
+			{
+				"name": "Exit_Date",
+				"type": "date"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "cust_info"
+		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

@@ -1,0 +1,64 @@
+{
+	"name": "Dataflow Transformation",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable",
+						"type": "DatasetReference"
+					},
+					"name": "Source"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText",
+						"type": "DatasetReference"
+					},
+					"name": "Sink"
+				}
+			],
+			"transformations": [
+				{
+					"name": "Filter"
+				},
+				{
+					"name": "Sort"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          EEID as string,",
+				"          Name as string,",
+				"          Job_Title as string,",
+				"          Department as string,",
+				"          Business_Unit as string,",
+				"          Gender as string,",
+				"          Ethnicity as string,",
+				"          Age as integer,",
+				"          Hire_Date as date,",
+				"          Annual_Salary as integer,",
+				"          Bonus as string,",
+				"          Country as string,",
+				"          City as string,",
+				"          Exit_Date as date",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> Source",
+				"Source filter(Gender==\"Female\") ~> Filter",
+				"Filter sort(asc(Name, false),",
+				"     caseInsensitive: true) ~> Sort",
+				"Sort sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> Sink"
+			]
+		}
+	}
+}

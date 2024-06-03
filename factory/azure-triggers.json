@@ -1,0 +1,9 @@
+{
+	"name": "azure-triggers",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3b09cf08-1bfb-45e7-8616-c720845dbe4c",
+		"tenantId": "00473c71-d0b3-40b2-b7c5-f511c261be3d"
+	}
+}

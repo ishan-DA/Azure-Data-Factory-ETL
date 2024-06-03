@@ -7,67 +7,7 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [
-			{
-				"name": "transaction_id",
-				"type": "int",
-				"precision": 10
-			},
-			{
-				"name": "transaction_date",
-				"type": "date"
-			},
-			{
-				"name": "store_id",
-				"type": "int",
-				"precision": 10
-			},
-			{
-				"name": "store_location",
-				"type": "varchar"
-			},
-			{
-				"name": "product_id",
-				"type": "int",
-				"precision": 10
-			},
-			{
-				"name": "transaction_qty",
-				"type": "int",
-				"precision": 10
-			},
-			{
-				"name": "unit_price",
-				"type": "int",
-				"precision": 10
-			},
-			{
-				"name": "product_category",
-				"type": "varchar"
-			},
-			{
-				"name": "product_type",
-				"type": "varchar"
-			},
-			{
-				"name": "product_detail",
-				"type": "varchar"
-			},
-			{
-				"name": "size",
-				"type": "varchar"
-			},
-			{
-				"name": "total_bill",
-				"type": "decimal",
-				"precision": 2,
-				"scale": 0
-			}
-		],
-		"typeProperties": {
-			"schema": "dbo",
-			"table": "Coffee_Shop"
-		}
+		"schema": []
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

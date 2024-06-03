@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": "raw-data"
+				"container": "transformed-data"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
@@ -18,5 +18,6 @@
 			"quoteChar": "\""
 		},
 		"schema": []
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

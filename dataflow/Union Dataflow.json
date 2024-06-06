@@ -1,0 +1,64 @@
+{
+	"name": "Union Dataflow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Delhi",
+						"type": "DatasetReference"
+					},
+					"name": "Delhi"
+				},
+				{
+					"dataset": {
+						"referenceName": "Mumbai",
+						"type": "DatasetReference"
+					},
+					"name": "Mumbai"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Union_Delhi_Mumbai",
+						"type": "DatasetReference"
+					},
+					"name": "Destination"
+				}
+			],
+			"transformations": [
+				{
+					"name": "Union"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          {month } as string,",
+				"          sales as string,",
+				"          profit as string,",
+				"          location as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> Delhi",
+				"source(output(",
+				"          {month } as string,",
+				"          sales as string,",
+				"          profit as string,",
+				"          location as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> Mumbai",
+				"Delhi, Mumbai union(byName: true)~> Union",
+				"Union sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> Destination"
+			]
+		}
+	}
+}

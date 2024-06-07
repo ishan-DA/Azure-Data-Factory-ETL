@@ -1,0 +1,9 @@
+{
+	"name": "azure-transformation",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a7c39ecf-008d-45f2-85f8-764d3a178635",
+		"tenantId": "00473c71-d0b3-40b2-b7c5-f511c261be3d"
+	}
+}

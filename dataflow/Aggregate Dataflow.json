@@ -1,0 +1,60 @@
+{
+	"name": "Aggregate Dataflow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable",
+						"type": "DatasetReference"
+					},
+					"name": "SQLSource"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText",
+						"type": "DatasetReference"
+					},
+					"name": "Destination"
+				}
+			],
+			"transformations": [
+				{
+					"name": "Aggregate"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          transaction_id as integer,",
+				"          transaction_date as date,",
+				"          store_id as integer,",
+				"          store_location as string,",
+				"          product_id as string,",
+				"          transaction_qty as string,",
+				"          unit_price as float,",
+				"          product_category as string,",
+				"          product_type as string,",
+				"          product_detail as string,",
+				"          size as string,",
+				"          total_bill as float",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> SQLSource",
+				"SQLSource aggregate(groupBy(store_location),",
+				"     transaction_id = countDistinct(transaction_id),",
+				"          product_detail = max(product_detail),",
+				"          total_bill = sum(total_bill)) ~> Aggregate",
+				"Aggregate sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> Destination"
+			]
+		}
+	}
+}

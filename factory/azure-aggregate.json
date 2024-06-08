@@ -1,0 +1,9 @@
+{
+	"name": "azure-aggregate",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8030acad-b8bb-446d-92b9-92ccc9cc051d",
+		"tenantId": "00473c71-d0b3-40b2-b7c5-f511c261be3d"
+	}
+}

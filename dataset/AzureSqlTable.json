@@ -7,69 +7,10 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [
-			{
-				"name": "EEID",
-				"type": "nvarchar"
-			},
-			{
-				"name": "Name",
-				"type": "varchar"
-			},
-			{
-				"name": "Job_Title",
-				"type": "varchar"
-			},
-			{
-				"name": "Department",
-				"type": "varchar"
-			},
-			{
-				"name": "Business_Unit",
-				"type": "varchar"
-			},
-			{
-				"name": "Gender",
-				"type": "varchar"
-			},
-			{
-				"name": "Ethnicity",
-				"type": "varchar"
-			},
-			{
-				"name": "Age",
-				"type": "int",
-				"precision": 10
-			},
-			{
-				"name": "Hire_Date",
-				"type": "date"
-			},
-			{
-				"name": "Annual_Salary",
-				"type": "int",
-				"precision": 10
-			},
-			{
-				"name": "Bonus",
-				"type": "nvarchar"
-			},
-			{
-				"name": "Country",
-				"type": "varchar"
-			},
-			{
-				"name": "City",
-				"type": "varchar"
-			},
-			{
-				"name": "Exit_Date",
-				"type": "date"
-			}
-		],
+		"schema": [],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "cust_info"
+			"table": "Coffee_Shop"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
